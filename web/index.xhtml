@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Employee Manager</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Employee name"/>
+                <h:inputText value="#{employeeController.name}"/>
+
+                <h:outputLabel value="Employee salary"/>
+                <h:inputText value="#{employeeController.salary}"/>
+
+                <h:outputLabel value="Employee gender"/>
+                <h:inputText value="#{employeeController.gender}"/>
+
+                <h:outputLabel value="Employee title"/>
+                <h:inputText value="#{employeeController.title}"/>
+                
+                <h:outputLabel value="Employee ID to delete"/>
+                <h:inputText value="#{employeeController.employeeID}"/>
+                
+                <h:outputLabel value="New Title "/>
+                <h:inputText value="#{employeeController.title}"/>
+                
+                <h:message for="number" style="color:blue"/>
+                <h:commandButton value="Submit" action="#{employeeController.submit}"/>
+                <h:commandButton value="Delete" action="#{employeeController.delete}"/>
+                <h:commandButton value="Update" action="#{employeeController.update()}"/>               
+                <h:commandButton value="Find One" action="#{employeeController.employeeSearch()}"/>              
+                <h:commandButton value="Show all Employees" action="employeeList.xhtml"/>
+                
+                <h:commandButton value="SalaryAverage" action="#{employeeController.salaryAverage()}"/>
+                <h:commandButton value="Minimun Salary" action="#{employeeController.minimunSalary()}"/>
+                <h:commandButton value="Maximun Salary" action="#{employeeController.maximunSalary()}"/>
+                <h:commandButton value="Procent Male" action="#{employeeController.maleProcent()}"/>
+                <h:commandButton value="Procent Female" action="#{employeeController.femaleProcent()}"/>
+            </h:panelGrid>
+         
+         <br/>
+         #{employeeController.average}
+         <br/>
+         #{employeeController.minSalary}
+         <br/>
+         #{employeeController.maxSalary}
+         <br/>
+         #{employeeController.procentMale}
+         <br/>
+         #{employeeController.procentFemale}
+
+        </h:form>    
+
+    </h:body>
+</html>
+

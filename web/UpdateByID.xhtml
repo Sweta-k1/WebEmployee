@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Employee Management</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="200" resizable="true" closable="true" collapsible="true">
+                    <p:panel header="LexiconAB" closable="true" toggleable="true" closeTitle="close">
+                        Welcome to Lexicon,Sweden's largest training company for all sectors.
+                        <br/>
+                        <h:graphicImage  value="resources/image/images.jpeg" width="70" height="70"/>
+                    </p:panel>
+
+                    LEXICON
+
+                </p:layoutUnit>
+
+
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Thank you for visiting us!!
+                </p:layoutUnit>
+
+
+                <p:layoutUnit position="center">
+                    <p:accordionPanel>
+                        <p:tab title="About">
+                            Lexicon was established in 1979 and is a franchise organization with a few equity-owned companies and a large number of franchise-owned companies.
+
+                        </p:tab>
+                        <p:tab title="Contact">
+
+                            Telefone:	076–324 64 90
+                            E-post:	infoaf@lexicon.se
+                            Visit:	Årstaängsvägen 9
+                        </p:tab>
+                        <br/>
+                    </p:accordionPanel>
+
+                    <br/><br/>
+                    Enter Employee Id
+                    <br/><br/><br/>
+                    <h:form>
+                        <p:panelGrid columns="2">
+
+                        <h:outputLabel value="Employee ID"/>
+                        <h:inputText value="#{employeeController.employeeID}"/>
+
+
+                        <h:outputLabel value="New Title "/>
+                        <h:inputText value="#{employeeController.title}"/>
+
+
+                        <h:commandButton value="Update" action="#{employeeController.update()}"/> 
+                        
+                        
+                        </p:panelGrid>
+                    </h:form>
+                    <br/>
+                    EMPLOYEE MANAGER
+                    <br/>
+                    <h:graphicImage  value="resources/image/logo.gif" width="100" height="50"/>
+
+
+                </p:layoutUnit>
+
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+
+</html>
